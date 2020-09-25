@@ -25,7 +25,7 @@ const window = new BrowserWindow({
 
 **preload.js**
 ```js
-const log = require('electron-log');
+const log = require('electron-log-loggly');
 
 window.log = log.functions;
 ```

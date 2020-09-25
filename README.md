@@ -1,7 +1,5 @@
-# electron-log
-[![Build Status](https://travis-ci.org/megahertz/electron-log.svg?branch=master)](https://travis-ci.org/megahertz/electron-log)
-[![NPM version](https://badge.fury.io/js/electron-log.svg)](https://badge.fury.io/js/electron-log)
-[![Dependencies status](https://david-dm.org/megahertz/electron-log/status.svg)](https://david-dm.org/megahertz/electron-log)
+# @mayahq/electron-log-loggly
+
 
 A forked variant of megahertz/electron-log to ensure conflictless logging in Loggly using their POST log endpoint. 
 this library may not be updated for all general usage **Do not use this library if regular upates are required** kindly use https://github.com/megahertz/electron-log.
@@ -22,12 +20,12 @@ By default, it writes logs to the following locations:
 
 Install with [npm](https://npmjs.org/package/electron-log):
 
-    npm install electron-log
+    npm install @mayahq/electron-log-loggly
     
 ## Usage
 
 ```js
-const log = require('electron-log');
+const log = require('electron-log-loggly');
 
 log.info('Hello, log');
 log.warn('Some problem appears');
@@ -181,7 +179,7 @@ is a function which is called on each transport call.
 You can create multiple logger instances with different settings:
 
 ```js
-const electronLog = require('electron-log');
+const electronLog = require('electron-log-loggly');
 
 const log = electronLog.create('anotherInstance');
 ````
@@ -189,7 +187,7 @@ const log = electronLog.create('anotherInstance');
 ### Logging scopes
 
 ```js
-const log = require('electron-log');
+const log = require('electron-log-loggly');
 const userLog = log.scope('user');
 
 userLog.info('message with user scope');
