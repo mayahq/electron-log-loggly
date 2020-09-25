@@ -1,5 +1,5 @@
 {
-  "name": "electron-log-loggly",
+  "name": "@mayahq/electron-log-loggly",
   "version": "1.0.0",
   "description": "Just a very simple logging module for your Electron application forked for working with Loggly remote URL",
   "main": "src/index.js",
