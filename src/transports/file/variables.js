@@ -108,9 +108,16 @@ function getPathVariables(platform) {
 
 function getUserData(platform, appName) {
   if (electronApi.getName() !== appName) {
+    if (typeof appName === 'string') {
+      return path.join(getAppData(platform), appName);
+    }
+    return path.join(getAppData(platform), '');
+  }
+  if (electronApi.getPath('userData')) {
+    return electronApi.getPath('userData');
+  }
+  if (typeof appName === 'string') {
     return path.join(getAppData(platform), appName);
   }
-
-  return electronApi.getPath('userData')
-    || path.join(getAppData(platform), appName);
+  return path.join(getAppData(platform), '');
 }
