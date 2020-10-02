@@ -43,9 +43,11 @@ function getHome() {
 
 function getLibraryDefaultDir(platform, appName) {
   if (platform === 'darwin') {
-    return path.join(getHome(), 'Library/Logs', appName);
+    if (typeof appName === 'string') {
+      return path.join(getHome(), 'Library/Logs', appName);
+    }
+    return path.join(getHome(), 'Library/Logs', '');
   }
-
   return path.join(getUserData(platform, appName), 'logs');
 }
 
